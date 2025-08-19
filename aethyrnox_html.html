@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AETHYRNOX STORE - TopUp Game Tercepat & Terpercaya</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="logo">AETHYRNOX STORE</h1>
+            <p class="subtitle">TopUp Game Tercepat & Terpercaya 24/7</p>
+        </header>
+
+        <div class="main-card">
+            <!-- Game Selection -->
+            <div class="form-section">
+                <h2 class="form-title">🎮 PILIH GAME</h2>
+                <div class="games-grid">
+                    <div class="game-card" data-game="mobile-legends">
+                        <div class="game-icon">
+                            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/b/b3/Mobile_Legends_Bang_Bang_logo.jpg/640px-Mobile_Legends_Bang_Bang_logo.jpg" alt="Mobile Legends">
+                        </div>
+                        <h3 class="game-title">MOBILE LEGENDS</h3>
+                        <p class="game-subtitle">Diamond ML</p>
+                    </div>
+                    <div class="game-card" data-game="valorant">
+                        <div class="game-icon">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Valorant_logo.svg/640px-Valorant_logo.svg.png" alt="Valorant">
+                        </div>
+                        <h3 class="game-title">VALORANT</h3>
+                        <p class="game-subtitle">VP Points</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- User ID Input -->
+            <div class="form-section" id="user-data-section" style="display: none;">
+                <h2 class="form-title">👤 DATA AKUN</h2>
+                <div class="input-group">
+                    <label for="user-id">User ID</label>
+                    <input type="text" id="user-id" placeholder="Masukkan User ID" required>
+                </div>
+                <div class="input-group" id="zone-id-group" style="display: none;">
+                    <label for="zone-id">Zone ID</label>
+                    <input type="text" id="zone-id" placeholder="Masukkan Zone ID">
+                </div>
+            </div>
+
+            <!-- Diamond/Item Selection -->
+            <div class="form-section" id="items-section" style="display: none;">
+                <h2 class="form-title">💎 PILIH NOMINAL</h2>
+                <div class="diamonds-grid" id="items-grid">
+                    <!-- Will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Payment Method -->
+            <div class="form-section" id="payment-section" style="display: none;">
+                <h2 class="form-title">💳 METODE PEMBAYARAN</h2>
+                <div class="payment-methods">
+                    <div class="payment-method" data-method="bri">
+                        <div class="payment-icon" style="color: #00ff00;">🏦</div>
+                        <div class="payment-name">BANK BRI</div>
+                    </div>
+                    <div class="payment-method" data-method="gopay">
+                        <div class="payment-icon" style="color: #00ffff;">💚</div>
+                        <div class="payment-name">GOPAY</div>
+                    </div>
+                    <div class="payment-method" data-method="shopeepay">
+                        <div class="payment-icon" style="color: #ff00ff;">🧡</div>
+                        <div class="payment-name">SHOPEEPAY</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="form-section" id="contact-section" style="display: none;">
+                <h2 class="form-title">📱 INFO KONTAK</h2>
+                <div class="input-group">
+                    <label for="whatsapp">WhatsApp</label>
+                    <input type="tel" id="whatsapp" placeholder="08xxxxxxxxxx" required>
+                </div>
+            </div>
+
+            <!-- Order Summary -->
+            <div class="order-summary" id="order-summary" style="display: none;">
+                <h3 class="summary-title">📋 RINGKASAN PESANAN</h3>
+                <div class="summary-row">
+                    <span>Game:</span>
+                    <span id="summary-game">-</span>
+                </div>
+                <div class="summary-row">
+                    <span>User ID:</span>
+                    <span id="summary-userid">-</span>
+                </div>
+                <div class="summary-row" id="summary-zone-row" style="display: none;">
+                    <span>Zone ID:</span>
+                    <span id="summary-zoneid">-</span>
+                </div>
+                <div class="summary-row">
+                    <span>Item:</span>
+                    <span id="summary-item">-</span>
+                </div>
+                <div class="summary-row">
+                    <span>Pembayaran:</span>
+                    <span id="summary-payment">-</span>
+                </div>
+                <div class="summary-row total">
+                    <span>Total:</span>
+                    <span id="summary-total">Rp 0</span>
+                </div>
+            </div>
+
+            <!-- Order Button -->
+            <button class="order-btn" id="order-btn" style="display: none;" disabled>
+                🛒 BUAT PESANAN
+            </button>
+
+            <!-- WhatsApp CS Button -->
+            <button class="whatsapp-btn" onclick="contactCS()">
+                💬 HUBUNGI CUSTOMER SERVICE
+            </button>
+        </div>
+
+        <!-- Features -->
+        <div class="features">
+            <div class="feature">
+                <div class="feature-icon">⚡</div>
+                <h3>PROSES CEPAT</h3>
+                <p>Topup diproses dalam 1-3 menit</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🔒</div>
+                <h3>AMAN & TERPERCAYA</h3>
+                <p>Transaksi 100% aman dan terpercaya</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">💰</div>
+                <h3>HARGA TERBAIK</h3>
+                <p>Harga kompetitif dan terjangkau</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">📞</div>
+                <h3>CS 24/7</h3>
+                <p>Customer service siap membantu 24 jam</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>✅ PESANAN BERHASIL DIBUAT!</h2>
+            <p id="modal-message"></p>
+            <button class="whatsapp-btn" onclick="redirectToWhatsApp()" style="margin-top: 25px;">
+                💬 LANJUTKAN DI WHATSAPP
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
